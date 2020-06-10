@@ -1,0 +1,49 @@
+body {
+  height: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  
+}
+
+.container {
+  position: "absolute";
+}
+.navbar{
+background:black;}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 5px;
+  color: #fafafa;
+  font-weight: 400;
+  font-family: "Oswald", sans-serif;
+}
+
+p {
+  font-size: 28px;
+  font-family: "Oswald", sans-serif;
+  color: black;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0 0 15px 30px;
+}
+
+.card {
+  margin: 10px;
+  background-color: #f7f7f7;
+  border-color: #c8ced3;
+  padding: 10px;
+}
+
+.seperator {
+  height: 100%;
+  width: 2px;
+  background: black;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  left: 50%;
+}

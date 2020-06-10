@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark  ">
+        <h2 class="mx-auto">Optical Spectrum Analyzer</h2>
+    </nav>
+    <div class="row mx-0 mt-3">
+        <div class="container col-md-6">
+            <div class="row">
+                <p>Generate continuous acquisition :</p>
+                <button class="btn btn-primary btn-md active mx-3" id="start">START</button>
+                <button class="btn  btn-danger btn-md active " id="stop">STOP</button>
+            </div>
+            <div class=" mt-2" id="chartContainer" style="display: none"></div>
+        </div>
+        <div class="seperator"></div>
+        <div class="container col-md-6">
+            <!--for getting Trace of the Acquisition between the range form min to max-->
+            <form id="traceForm" action="{{url_for('single')}}">
+                <fieldset>
+                    <div class="row ">
+                        <div class="form-group mx-2 my-0">
+                            <label for="minLimit">Minimum X Limit(nm) > 0 </label>
+                            <input type="text" id="minLimit" placeholder="Enter Minimum Limit" required
+                                class="form-control" />
+                        </div>
+                        <div class="form-group  my-0">
+                            <label for="maxLimit">Maximum X Limit(nm)
+                                < 10000 </label> <input type="text" id="maxLimit" placeholder="Enter Maximum Limit"
+                                    required class="form-control" />
+                        </div>
+                        <div class="form-group mx-2 mt-4">
+                            <input type="button" id="submitButton" class="btn btn-md btn-primary" value="Get Range Graph" />
+
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+            <!--for getting Single Trace of the Acquisition-->
+            <input type="button" id="singleTrace" class="btn btn-md btn-secondary" value="Get Single Trace" />
+            <div class=" mt-2" id="singleChart" style="display: none"></div>
+
+        </div>
+
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+</html>
